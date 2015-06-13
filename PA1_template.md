@@ -71,6 +71,8 @@ missingValCount <- sum(is.na(data$steps))
 
 There are 2304 missing values for steps taken in the data set.
 
+Missing 'steps' values were estimated by taking the average of all non-NA steps data, as follows.
+
 
 ```r
 replaceNA <- function(s) {
@@ -84,6 +86,7 @@ replaceNA <- function(s) {
 estData <- data
 estData$estSteps <- sapply(data$steps,replaceNA)
 ```
+
 The following is a histogram of the daily steps taken using the estimated steps data.
 
 

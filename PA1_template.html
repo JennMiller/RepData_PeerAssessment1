@@ -253,6 +253,8 @@ plot(dailyActivityPattern$interval,dailyActivityPattern$meanStepsTaken,type=&#39
 
 <p>There are 2304 missing values for steps taken in the data set.</p>
 
+<p>Missing &#39;steps&#39; values were estimated by taking the average of all non-NA steps data, as follows.</p>
+
 <pre><code class="r">replaceNA &lt;- function(s) {
   if(is.na(s)) {
     s &lt;- mean(data$steps,na.rm=TRUE)
